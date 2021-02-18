@@ -8,7 +8,7 @@ Route::get('/', function () {
 });
 
 
-Auth::routes();
+//Auth::routes();
 
 Route::get('/todos', 'TodoController@index')->name('todo.index');
 Route::get('/todo/create', 'TodoController@create')->name('todo.create');
@@ -18,6 +18,7 @@ Route::get('/todo/{todo}/edit', 'TodoController@edit')->name('todo.edit');
 Route::patch('/todo/{todo}/edit', 'TodoController@update')->name('todo.update');
 Route::delete('/todo/{todo}/delete', 'TodoController@destroy')->name('todo.delete');
 
+//Auth::routes();
 // Todo custom complete incomplete route
 Route::put('/todo/{todo}/complete/', 'TodoController@complete')->name('todo.complete');
 Route::delete('/todo/{todo}/incomplete/', 'TodoController@incomplete')->name('todo.incomplete');
