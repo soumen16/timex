@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Todo
+    todo: Timex
 @endsection
 
 @section('content')

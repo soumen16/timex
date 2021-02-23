@@ -39,6 +39,7 @@ class TodoController extends Controller
         $validator = Validator::make($request->all(), [
             'title' => 'required|max:255|min:3',
             'description' => 'required|max:255|min:3',
+
         ]);
 
         if ($validator->fails()) {
@@ -48,6 +49,7 @@ class TodoController extends Controller
         auth()->user()->todos()->create([
             'title' => $request->title,
             'description' => $request->description,
+
 
         ]);
 
@@ -72,6 +74,7 @@ class TodoController extends Controller
         $validator = Validator::make($request->all(), [
             'title' => 'required|max:255|min:3',
             'description' => 'required|max:255|min:3',
+            
         ]);
 
         if ($validator->fails()) {
@@ -80,6 +83,7 @@ class TodoController extends Controller
         $todo->update([
             'title' => $request->title,
             'description' => $request->description,
+            
         ]);
 
         return redirect('/todos')->with('toast_success', 'Todo was updated!');

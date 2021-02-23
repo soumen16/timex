@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Todo Update
+    edit: Timex
 @endsection
 
 @section('content')
@@ -14,10 +14,10 @@
                     <form action="{{route('todo.update', $todo->id)}}" method="post" class="align-items-center">
                         @csrf
                         @method('patch')
-                        <div class="form-group mx-sm-1 mb-2 ">
+                        <div class="form-group  mx-sm-1 mb-1 ">
                             <input type="text" name="title" id="title" value="{{$todo->title}}" placeholder="e.g. Read every day p3" class="form-control">
                         </div>
-                        <div class="form-group mx-sm-1 mb-2 ">
+                        <div class="form-group  mx-sm-1 mb-5 ">
                             <textarea class="form-control" name="description" id="description" rows="3" placeholder="e.g. description p3">{{$todo->description}}</textarea>
                           </div>
                         <button type="submit" class="btn mb-5 btn-outline-primary btn-block">Update</button>

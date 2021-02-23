@@ -19,7 +19,7 @@
                         @endif
                     </div>
                     <ul class="list-group list-group-flush">
-                        @foreach ($todos as $todo)
+                        @forelse ($todos as $todo)
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                 <a href="{{route('todo.show', $todo->id)}}" class=" text-decoration-none">
                                     @if($todo->completed)
@@ -30,7 +30,9 @@
                                 </a>
                                 @include('todo.complete_button')
                             </li>
-                        @endforeach
+                        @empty 
+                            <p>No task found, Create it.</p>
+                        @endforelse
                     </ul>
                     
                 </div>
